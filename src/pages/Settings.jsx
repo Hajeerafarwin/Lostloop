@@ -1,0 +1,5 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import InternalLayout from "../components/InternalLayout";
+function Settings(){const [email,setEmail]=useState(true);const [messages,setMessages]=useState(true);return <InternalLayout title="Settings" subtitle="Manage your LostLoop preferences."><div className="settings-card"><h2>Notifications</h2><label className="setting-row"><div><b>Email notifications</b><small>Receive updates about reports and matches.</small></div><input type="checkbox" checked={email} onChange={e=>setEmail(e.target.checked)}/></label><label className="setting-row"><div><b>Message notifications</b><small>Get notified when someone contacts you.</small></div><input type="checkbox" checked={messages} onChange={e=>setMessages(e.target.checked)}/></label><h2>Account</h2><div className="setting-row"><div><b>Profile & personal information</b><small>Update your profile details.</small></div><Link to="/profile">Open Profile</Link></div></div></InternalLayout>}
+export default Settings;
